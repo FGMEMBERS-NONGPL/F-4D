@@ -83,24 +83,24 @@
           <z>  -30 </z>
       </location>
    </pointmass>
-   <pointmass name="station2"><!-- three MK-82 bombs -->
-      <weight unit="LBS"> 1560 </weight>
+   <pointmass name="station2"><!-- 3 MK-82 bombs, 2 missiles-->
+      <weight unit="LBS"> 1800 </weight>
       <location name="POINTMASS" unit="IN">
           <x>   -6 </x>
           <y>  -83 </y>
           <z>  -20 </z>
       </location>
    </pointmass>
-   <pointmass name="station3"><!-- unused -->
-      <weight unit="LBS"> 0 </weight>
+   <pointmass name="station3"><!-- SUU-23 gun pod -->
+      <weight unit="LBS"> 1739 </weight>
       <location name="POINTMASS" unit="IN">
           <x>    0 </x>
           <y>    0 </y>
           <z>  -20 </z>
       </location>
    </pointmass>
-   <pointmass name="station4"><!-- three MK-82 bombs -->
-      <weight unit="LBS"> 1560 </weight>
+   <pointmass name="station4"><!-- 3 MK-82 bombs, 2 missiles -->
+      <weight unit="LBS"> 1800 </weight>
       <location name="POINTMASS" unit="IN">
           <x>   -6 </x>
           <y>   83 </y>
@@ -145,8 +145,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">      41000.0 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  8500.0 </damping_coeff>
-   <max_steer unit="DEG">0</max_steer>
+   <damping_coeff unit="LBS/FT/SEC"> 18500.0 </damping_coeff>
    <brake_group>LEFT</brake_group>
    <retractable>1</retractable>
  </contact>
@@ -161,46 +160,45 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">      41000.0 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  8500.0 </damping_coeff>
-   <max_steer unit="DEG">0</max_steer>
+   <damping_coeff unit="LBS/FT/SEC"> 18500.0 </damping_coeff>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>
  </contact>
 
   <contact type="STRUCTURE" name="LEFT_WING">
     <location unit="IN">
-     <x> 118</x>
-     <y> -19.20 </y>
-     <z> -18.90 </z>
+     <x> 118 </x>
+     <y>-240 </y>
+     <z>   0 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      61795.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC"> 12359.00 </damping_coeff>
+    <spring_coeff unit="LBS/FT">      30000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 30000.00 </damping_coeff>
  </contact>
 
   <contact type="STRUCTURE" name="RIGHT_WING">
     <location unit="IN">
      <x> 118 </x>
-     <y>  19.20 </y>
-     <z> -18.90 </z>
+     <y> 240 </y>
+     <z>   0 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      61795.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC"> 12359.00 </damping_coeff>
+    <spring_coeff unit="LBS/FT">      30000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 30000.00 </damping_coeff>
  </contact>
 
   <contact type="STRUCTURE" name="AFT_FUSELAGE">
     <location unit="IN">
-     <x> 550 </x>
+     <x> 300 </x>
      <y>   0 </y>
      <z>   0 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      40000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  8000.00 </damping_coeff>
+    <spring_coeff unit="LBS/FT">      30000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 30000.00 </damping_coeff>
  </contact>
 
   <contact type="STRUCTURE" name="FWD_FUSELAGE">
@@ -211,8 +209,8 @@
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      40000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  8000.00 </damping_coeff>
+    <spring_coeff unit="LBS/FT">      30000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC"> 30000.00 </damping_coeff>
  </contact>
 
  </ground_reactions>
@@ -228,7 +226,6 @@
     <feed>0</feed>
     <feed>1</feed>
     <feed>2</feed>
-    <feed>3</feed>
     <thruster file="direct">
      <location unit="IN">
        <x> 190 </x>
@@ -252,7 +249,6 @@
     <feed>0</feed>
     <feed>1</feed>
     <feed>2</feed>
-    <feed>3</feed>
     <thruster file="direct">
      <location unit="IN">
        <x> 190 </x>
@@ -274,22 +270,25 @@
        <y>  0   </y>
        <z> -6.0 </z>
      </location>
+     <type>JP-4</type>
      <priority>2</priority>
      <capacity unit="LBS"> 13160.00 </capacity>
      <contents unit="LBS"> 13000.00 </contents>
      <standpipe unit="LBS"> 2000.00 </standpipe>
   </tank>
 
-  <!-- Centerline 600 gallon drop tank -->
+  <!-- Centerline 600 gallon drop tank 
   <tank type="FUEL" number="1">
      <location unit="IN">
        <x>     0 </x>
        <y>   0.00 </y>
        <z> -20.00 </z>
      </location>
+     <type>JP-4</type>
      <capacity unit="LBS"> 3950.00 </capacity>
      <contents unit="LBS">    0 </contents>
   </tank>
+  -->
 
   <!-- Left 370 gallon drop tank -->
   <tank type="FUEL" number="2">
@@ -298,6 +297,7 @@
        <y> -139.0 </y>
        <z>  -30.0 </z>
      </location>
+     <type>JP-4</type>
      <capacity unit="LBS"> 2440.00 </capacity>
      <contents unit="LBS"> 1000.00 </contents>
   </tank>
@@ -309,6 +309,7 @@
        <y>  139.0 </y>
        <z>  -30.0 </z>
      </location>
+     <type>JP-4</type>
      <capacity unit="LBS"> 2440.00 </capacity>
      <contents unit="LBS"> 1000.00 </contents>
   </tank>
@@ -351,7 +352,7 @@
                   <table>
                       <independentVar>aero/h_b-mac-ft</independentVar>
                       <tableData>
-                          0.0000	0.0480
+                          0.0000	0.4800
                           0.1000	0.5150
                           0.1500	0.6290
                           0.2000	0.7090
@@ -474,7 +475,6 @@
        <description>Basic_drag_coefficient</description>
        <product>
           <property>systems/drag/index</property>
-          <property>aero/function/kCDge</property>
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
@@ -491,6 +491,7 @@
     <function name="aero/coefficient/CDi">
        <description>Induced_drag_coefficient</description>
          <product>
+           <property>aero/function/kCDge</property>
            <property>aero/cl-squared</property>
            <value>0.15</value>
          </product>
@@ -512,17 +513,21 @@
 
     <function name="aero/coefficient/CDflap">
        <description>Drag_coefficient_due_to_flaps</description>
-         <product>
-           <property>fcs/flap-pos-norm</property>
-           <value> 0.18</value>
-         </product>
+          <table>
+            <independentVar lookup="row">fcs/flap-pos-norm</independentVar>
+            <tableData>
+               0.0    0.000
+               0.5    0.007
+               1.0    0.020
+            </tableData>
+          </table>
     </function>
 
     <function name="aero/coefficient/CDgear">
        <description>Drag_coefficient_due_to_gear</description>
          <product>
            <property>gear/gear-pos-norm</property>
-           <value>0.028</value>
+           <value>0.029</value>
          </product>
     </function>
 
@@ -530,7 +535,7 @@
        <description>Drag_coefficient_due_to_speedbrakes</description>
          <product>
            <property>fcs/speedbrake-pos-norm</property>
-           <value>0.03</value>
+           <value>0.025</value>
          </product>
     </function>
 
@@ -560,7 +565,13 @@
        <description>Drag_coefficient_due_to_braking_chute</description>
          <product>
            <property>systems/chute/unfurl-norm</property>
-           <value>1.035</value>
+           <abs>
+            <sum>
+              <property>systems/chute/speed-limiter</property>
+              <value>-1.0</value>
+            </sum>
+           </abs>
+           <value>0.7</value>
          </product>
     </function>
 
@@ -605,7 +616,7 @@
 
   </axis>
 
-    <function name="aero/qSbw">
+    <function name="aero/qSbwroll">
        <description>Roll_moment_dimensionalizer</description>
        <product>
            <property>aero/qbar-area</property>
@@ -613,7 +624,7 @@
        </product>
     </function>
 
-    <function name="aero/qSbwp">
+    <function name="aero/qSbwproll">
        <description>Roll_moment_roll_rate_dimensionalizer</description>
        <product>
            <property>aero/qSbw</property>
@@ -622,7 +633,7 @@
        </product>
     </function>
 
-    <function name="aero/qSbwr">
+    <function name="aero/qSbwrroll">
        <description>Roll_moment_yaw_rate_dimensionalizer</description>
        <product>
            <property>aero/qSbw</property>
@@ -654,10 +665,11 @@
        <product>
           <property>fcs/left-aileron-pos-rad</property>
           <table>
-            <independentVar lookup="row">velocities/mach</independentVar>
+            <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-              0.0    0.120
-              2.0    0.040
+              0.0    0.12
+              0.2    0.10
+              0.4    0.02
             </tableData>
           </table>
        </product>
@@ -666,8 +678,15 @@
     <function name="aero/coefficient/Cldr">
        <description>Roll_moment_due_to_rudder</description>
        <product>
-           <property>fcs/rudder-pos-rad</property>
-           <value>0.005</value>
+          <property>fcs/rudder-pos-rad</property>
+          <table>
+            <independentVar lookup="row">aero/alpha-rad</independentVar>
+            <tableData>
+              0.0    0.002
+              0.2    0.003
+              0.4    0.006
+            </tableData>
+          </table>
        </product>
     </function>
 
@@ -682,15 +701,15 @@
              <property>aero/coefficient/Clda</property>
              <property>aero/coefficient/Cldr</property>
            </sum>
-           <property>aero/qSbw</property>
+           <property>aero/qSbwroll</property>
         </product>
         <product>
            <property>aero/coefficient/Clp</property>
-           <property>aero/qSbwp</property>
+           <property>aero/qSbwproll</property>
         </product>
         <product>
            <property>aero/coefficient/Clr</property>
-           <property>aero/qSbwr</property>
+           <property>aero/qSbwrroll</property>
         </product>
       </sum>
     </function>

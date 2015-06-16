@@ -58,6 +58,115 @@
 
   </channel>
 
+  <channel name="Bombs">
+
+   <kinematic name="Bomb 1 timer">
+     <input>systems/armament/station2/released</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     0.3 </time>
+       </setting>
+     </traverse>
+     <output>systems/armament/bomb1/released-cmd</output>
+   </kinematic>
+   <!-- release bomb 1 -->
+     <switch name="systems/armament/bomb1/released">
+          <default value="0"/>
+          <test value="1">
+                systems/armament/bomb1/released-cmd == 1
+          </test>
+     </switch>
+
+   <!-- release bomb 2 -->
+     <switch name="systems/armament/bomb2/released">
+          <default value="0"/>
+          <test value="1">
+                systems/armament/station2/released == 1
+          </test>
+     </switch>
+
+   <kinematic name="Bomb 3 timer">
+     <input>systems/armament/station2/released</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     0.5 </time>
+       </setting>
+     </traverse>
+     <output>systems/armament/bomb3/released-cmd</output>
+   </kinematic>
+   <!-- release bomb 3 -->
+     <switch name="systems/armament/bomb3/released">
+          <default value="0"/>
+          <test value="1">
+                systems/armament/bomb3/released-cmd == 1
+          </test>
+     </switch>
+
+   <kinematic name="Bomb 4 timer">
+     <input>systems/armament/station2/released</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     0.5 </time>
+       </setting>
+     </traverse>
+     <output>systems/armament/bomb4/released-cmd</output>
+   </kinematic>
+   <!-- release bomb 4 -->
+     <switch name="systems/armament/bomb4/released">
+          <default value="0"/>
+          <test value="1">
+                systems/armament/bomb4/released-cmd == 1
+          </test>
+     </switch>
+
+   <!-- release bomb 5 -->
+     <switch name="systems/armament/bomb5/released">
+          <default value="0"/>
+          <test value="1">
+                systems/armament/station2/released == 1
+          </test>
+     </switch>
+
+   <kinematic name="Bomb 6 timer">
+     <input>systems/armament/station2/released</input>
+     <traverse>
+       <setting>
+          <position> 0 </position>
+          <time>     0 </time>
+       </setting>
+       <setting>
+          <position> 1 </position>
+          <time>     0.3 </time>
+       </setting>
+     </traverse>
+     <output>systems/armament/bomb6/released-cmd</output>
+   </kinematic>
+   <!-- release bomb 6 -->
+     <switch name="systems/armament/bomb6/released">
+          <default value="0"/>
+          <test value="1">
+                systems/armament/bomb6/released-cmd == 1
+          </test>
+     </switch>
+
+  </channel>
+
+
   <channel name="Weight-loss">
 
      <!-- station 1 -->

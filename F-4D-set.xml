@@ -2,7 +2,7 @@
 
 <!-- License:  Creative Commons, CC-BY-NC-SA   -->
 <!-- Author:   David Culp, Alpha Simulations   -->
-<!-- Email:    davidculp@cox.net               -->
+<!-- Email:    daveculp@cox.net                -->
 
 
 <PropertyList>
@@ -102,7 +102,15 @@
     <desc>Toggle fuel cutoff switch</desc>
    </key>
    <key>
-    <name>Space bar</name>
+    <name>d (lower case d) </name>
+    <desc>Deploy braking 'chute</desc>
+   </key>
+   <key>
+    <name>j (lower case j) </name>
+    <desc>Jettison braking 'chute</desc>
+   </key>
+   <key>
+    <name>e (lower case e) </name>
     <desc>Release selected stores</desc>
    </key>
    <line> </line>
@@ -186,8 +194,14 @@
      <name>d</name>
      <desc>Deploy braking chute</desc>
      <binding>
+      <condition>
+       <not-equals>
+        <property>controls/flight/chute_jettisoned</property>
+        <value>1</value>
+       </not-equals>
+      </condition>
       <command>property-assign</command>
-      <property>fdm/jsbsim/systems/chute/deploy</property>
+      <property>sim/multiplay/generic/int[6]</property>
       <value type="int">1</value>
      </binding>
     </key>
@@ -197,7 +211,7 @@
       <desc>jettison braking chute</desc>
       <binding>
        <command>property-assign</command>
-       <property>fdm/jsbsim/systems/chute/deploy</property>
+       <property>sim/multiplay/generic/int[6]</property>
        <value type="int">0</value>
       </binding>
       <binding>
@@ -261,15 +275,40 @@
       </binding>
     </key>
 
-  <key n="32">
-   <name>SPACE</name>
-   <desc>Release selected stores</desc>
-    <binding>
-     <command>property-assign</command>
-     <property>fdm/jsbsim/systems/armament/release</property>
-     <value>1</value>
-    </binding>
-   </key>
+    <key n="101">
+     <name>e</name>
+     <desc>Release selected store(s)</desc>
+      <binding>
+       <command>property-assign</command>
+       <property>fdm/jsbsim/systems/armament/release</property>
+       <value>1</value>
+      </binding>
+     <mod-up>
+       <binding>
+        <command>property-assign</command>
+        <property>fdm/jsbsim/systems/armament/release</property>
+        <value>0</value> 
+       </binding>
+     </mod-up>
+    </key>
+
+    <key n="115">
+     <name>s</name>
+     <desc>Toggle starter valves.</desc>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/engines/engine[0]/starter</property>
+     </binding>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/engines/engine[1]/starter</property>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>null</command>
+       </binding>
+     </mod-up>
+    </key>
 
    </keyboard>
  </input>
@@ -298,27 +337,12 @@
      <sim-time-sec>0</sim-time-sec>
    </simulation>
    <systems>
-    <hook>
-      <tailhook-cmd-norm type="double">0</tailhook-cmd-norm> 
-    </hook>
-    <holdback>
-      <holdback-cmd type="double">0</holdback-cmd>
-    </holdback>
-    <refuel>
-      <armed type="double">0</armed>
-    </refuel>
     <dump>
       <armed type="double">0</armed>
     </dump>
-    <NWS>
-      <engaged type="double">0</engaged>
-    </NWS>
     <radar>
       <range type="int">40</range>
     </radar>
-    <reverser>
-      <command type="double">0</command>
-    </reverser>
     <canopy>
       <command type="double">0</command>
       <position type="double">0</position>
@@ -346,6 +370,11 @@
 
 
  <instrumentation>
+  <transponder>
+    <serviceable>true</serviceable>
+    <id-code>1200</id-code>
+    <mode-switch>4</mode-switch>
+  </transponder>
   <marker-beacon>
     <volume type="double" archive="y">0.0</volume>
   </marker-beacon>
@@ -358,7 +387,17 @@
  <systems>
    <refuel>
      <contact type="bool">false</contact>
+     <type>boom</type>
    </refuel>
  </systems>
+
+ <nasal>
+   <aar>
+     <file>Aircraft/DavePack/Nasal/aar_jsbsim.nas</file>
+   </aar>
+   <init>
+     <file>Aircraft/DavePack/Nasal/version.nas</file>
+   </init>
+ </nasal>
 
 </PropertyList>

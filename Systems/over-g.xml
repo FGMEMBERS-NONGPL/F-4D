@@ -16,7 +16,7 @@
                 fcs/elevator-pos-norm lt -0.1
                 position/h-agl-ft gt 100
           </test>
-          <test logic="AND" value="2">
+          <test logic="AND" value="3">
                 fcs/elevator-pos-norm gt -0.1
                 systems/over-g/trigger1 eq 0
           </test>
@@ -30,7 +30,7 @@
                 fcs/elevator-pos-norm lt -0.1
                 position/h-agl-ft gt 100
           </test>
-          <test logic="AND" value="2">
+          <test logic="AND" value="3">
                 fcs/elevator-pos-norm gt -0.1
                 systems/over-g/trigger2 eq 0
           </test>
@@ -44,7 +44,7 @@
                 fcs/elevator-pos-norm lt -0.1
                 position/h-agl-ft gt 100
           </test>
-          <test logic="AND" value="2">
+          <test logic="AND" value="3">
                 fcs/elevator-pos-norm gt -0.1
                 systems/over-g/trigger3 eq 0
           </test>
@@ -58,7 +58,7 @@
                 fcs/elevator-pos-norm lt -0.1
                 position/h-agl-ft gt 100
           </test>
-          <test logic="AND" value="2">
+          <test logic="AND" value="3">
                 fcs/elevator-pos-norm gt -0.1
                 systems/over-g/trigger4 eq 0
           </test>
